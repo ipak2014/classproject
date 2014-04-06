@@ -1,0 +1,36 @@
+<h2 class="text-center"><strong>List of all saver inquiries</strong></h2>
+<br>
+<br>
+
+<table class="table table-striped">
+	<thead class="text-center">
+		<tr>
+		<th>ID</th>
+		<th class="col-md-2">E-mail</th>
+		<th>Gross Annual Income</th>
+		<th>Monthly Retirement</th>
+		<th>Monthly Savings</th>
+		<th>Pay off CC Balance?</th>
+		<th>Mortgage Amount</th>
+		<th>Downpayment</th>
+		<th class="col-md-2">Ready to Buy?</th>
+		<th>Zip Code</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @savers.each do |saver| %>
+		<tr>
+		<td><%= saver.id%></td>
+		<td><%= saver.email%></td>
+		<td><%= saver.income%></td>
+		<td><%= saver.retirement%></td>
+		<td><%= saver.savings%></td>
+		<td><%= saver.cc%></td>
+		<td><%= saver.mortgage%></td>
+		<td><%= saver.downpayment%></td>
+		<td><%= saver.ready%></td>
+		<td><%= saver.zip%></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

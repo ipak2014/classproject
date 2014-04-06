@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  income: 1
+  cc: MyString
+  retirement: 1
+  savings: 1
+  mortgage: 1
+  downpayment: 1
+  ready: MyString
+  zip: 1
+  email: MyString
+
+two:
+  income: 1
+  cc: MyString
+  retirement: 1
+  savings: 1
+  mortgage: 1
+  downpayment: 1
+  ready: MyString
+  zip: 1
+  email: MyString

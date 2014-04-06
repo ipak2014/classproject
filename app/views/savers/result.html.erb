@@ -1,0 +1,31 @@
+<h2>Evaluation Decision</h2><br>
+
+<p>Inquiry from: <%= @saver.email %></p><br>
+
+<% if @decline_reasons.any? == false %>
+	<p><strong>Congratulations!</strong> You are doing great financially.  If you would like to start your Saver Advantage application now or to save your profile for later, please create a user account.</p><br>
+	<a href='saveradvantage/newuser'>Create Account</a><br>
+<% else %>
+	<p><strong>You are currently not eligble to apply for a Saver Advantage mortgage for the following reason(s):</strong></p>
+		<ul>
+		<% @decline_reasons.each do |reason| %>
+		<li><%= reason %></li>
+		<% end %>
+			<% if @saver.mortgage < 625500 %>
+			<% end %>
+			<br>
+			<% if Servicearea.find_by_zip(@saver.zip) == nil %>
+			<a href = "saveradvantage/notify">Notify me when Saver Advantage starts service in <%=@saver.zip %></a>
+			<% end %>
+		</ul><br>
+	<p><strong>If you believe that you are eligible and would like Saver Advantage to re-consider your inquiry, please submit a brief explanation</strong></p>
+	<p>Examples:</p>
+	<ul>
+		<li>I carry a balance on a 0% credit card and have sufficient cash to pay it off immediately.</li>
+		<li>I prefer to save outside of retirement accounts and save more than 20% of monthly income.</li>
+	</ul>
+	<a href=/'saveradvantage/result/loe'>Submit explanation</a><br>
+<% end %>
+
+<br>
+<a href='/saveradvantage'>Return to Homepage</a>
