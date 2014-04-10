@@ -3,33 +3,33 @@
 <br>
 
 <table class="table table-striped">
-	<thead class="text-center">
+	<thead>
 		<tr>
 		<th>ID</th>
 		<th class="col-md-2">E-mail</th>
-		<th>Gross Annual Income</th>
-		<th>Monthly Retirement</th>
-		<th>Monthly Savings</th>
-		<th>Pay off CC Balance?</th>
-		<th>Mortgage Amount</th>
-		<th>Downpayment</th>
-		<th class="col-md-2">Ready to Buy?</th>
-		<th>Zip Code</th>
+		<th class="text-center">Gross Annual Income</th>
+		<th class="text-center">Monthly Retirement</th>
+		<th class="text-center">Monthly Savings</th>
+		<th class="text-center">Pay off CC Balance?</th>
+		<th class="text-center">Mortgage Amount</th>
+		<th class="text-center">Downpayment</th>
+		<th class="col-md-2 text-center">Ready to Buy?</th>
+		<th class="text-center">Zip Code</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @savers.each do |saver| %>
 		<tr>
-		<td><%= saver.id%></td>
+		<td><%= saver.id %></td>
 		<td><%= saver.email%></td>
-		<td><%= saver.income%></td>
-		<td><%= saver.retirement%></td>
-		<td><%= saver.savings%></td>
-		<td><%= saver.cc%></td>
-		<td><%= saver.mortgage%></td>
-		<td><%= saver.downpayment%></td>
-		<td><%= saver.ready%></td>
-		<td><%= saver.zip%></td>
+		<td class="text-right"><%= number_to_currency(saver.income, precision: 0) %></td>
+		<td class="text-right"><%= number_to_currency(saver.retirement, precision: 0) %></td>
+		<td class="text-right"><%= number_to_currency(saver.savings, precision: 0) %></td>
+		<td class="text-center"><%= saver.cc%></td>
+		<td class="text-right"><%= number_to_currency(saver.mortgage, precision: 0) %></td>
+		<td class="text-right"><%= number_to_currency(saver.downpayment, precision: 0) %></td>
+		<td class="text-center"><%= saver.ready%></td>
+		<td class="text-center"><%= saver.zip%></td>
 		</tr>
 	<% end %>
 	</tbody>

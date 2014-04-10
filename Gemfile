@@ -43,6 +43,8 @@ end
 
 gem 'bcrypt-ruby', '~> 3.1.0'
 
+gem 'rubillow'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

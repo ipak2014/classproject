@@ -6,48 +6,70 @@
 <div class="container">
 	<div class="row">
     	<div class="col-md-8">What is your annual pre-tax income, including any bonuses?</div>
-    	<div class="col-md-4"><input type="integer" placeholder="$100,000" name="income" class="input-custom"/></div><br>
+    	<div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="income" class="form-control"/>
+			<span class="input-group-addon">.00</span>
+    	</div>
     </div>    	
 	<div class="row">
     	<div class="col-md-8">Do you pay off your credit card balances in full every month?</div>
-    	<div class="col-md-2"><select class="form-control" type="string" name="cc" placeholder="Select" class="input-custom">
+    	<div class="col-md-4.5"><select class="form-control input-custom" type="string" name="cc" placeholder="Select One" class="input-custom">
+  			<option>Select One</option>
   			<% @cc.each do |cc| %>
   			<option><%= cc %></option>
   			<% end %>
-  	  	</select></div><br>
+  	  	</select></div>
     </div>    	
 	<div class="row">
     	<div class="col-md-8">How much do you contribute to your retirement accounts every month?</div>
-    	<div class="col-md-4"><input type="integer" placeholder="$500" name="retirement" class="input-custom"/></div><br>
+    	<div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="retirement" class="form-control"/>
+			<span class="input-group-addon">.00</span>
+    	</div>
     </div>    	
 	<div class="row">
     	<div class="col-md-8">How much do you save every month in other accounts?</div>
-    	<div class="col-md-4"><input type="integer" placeholder="$1,000" name="savings" class="input-custom"/></div><br>
+    	 <div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="savings" class="form-control"/>
+			<span class="input-group-addon">.00</span>
+    	</div>
     </div>    	
 	<div class="row">
     	<div class="col-md-8">Maximum mortgage amount you would like to get:</div>
-    	<div class="col-md-4"><input type="integer" placeholder="$800,000" name="mortgage" class="input-custom"/></div><br>
+    	 <div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="mortgage" class="form-control"/>
+			<span class="input-group-addon">.00</span>
+    	</div>
     </div>
 	<div class="row">
     	<div class="col-md-8">Available downpayment:</div>
-    	<div class="col-md-4"><input type="integer" placeholder="$160,000" name="downpayment" class="input-custom"/></div><br>
+    	 <div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="downpayment" class="form-control"/>
+			<span class="input-group-addon">.00</span>
+    	</div>
     </div> 
     <div class="row">
     	<div class="col-md-8">When are you planning to buy a house?</div>
-    	<div class="col-md-2"><select class="form-control" type="string" name="ready" class="input-custom">
+    	<div class="col-md-4.5"><select class="form-control input-custom" type="string" name="ready">
+  			<option>Select One</option>
   			<% @ready.each do |ready| %>
   			<option><%= ready %></option>
   			<% end %>
 		</select>
-    	</div><br>
+    	</div>
     </div>
 	<div class="row">
     	<div class="col-md-8">Zip code where you are looking to buy:</div>
-    	<div class="col-md-4"><input type="integer" placeholder="90403" name="zip" class="input-custom"/></div><br>
+    	<div class="col-md-4.5"><input type="integer" placeholder="90403" name="zip" class="input-custom"/></div>
     </div>
 	<div class="row">
     	<div class="col-md-8">Your e-mail address:</div>
-    	<div class="col-md-4"><input type="email" placeholder="your e-mail" name="email" class="input-custom"/></div><br>
+    	<div class="col-md-4.5"><input type="email" placeholder="your e-mail" name="email" class="input-custom"/></div>
     </div>
     <br>
     <div class="row">

@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-5 text-center"><strong>Property Information</strong></div>
+	</div>
+	<br>
+	<div class="row">
+    	<div class="col-md-1">Address:</div>
+		<div class="col-md-4"><%= @home.street %>, <%= @home.city %>, <%= @home.state %> <%=@home.zipcode %></div>
+	</div>
+	<div class="row">	
+		<div class="col-md-1">Type:</div>
+		<div class="col-md-2"><%= @home.use_code %></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Year Built:</div>
+		<div class="col-md-2"><%= @home.year_built %></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Size:</div>
+		<div class="col-md-2"><%= number_with_delimiter(@home.finished_square_feet) %> sq ft</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Lot:</div>
+		<div class="col-md-2"><%= number_with_delimiter(@home.lot_size_square_feet) %> sq ft</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Bedrooms:</div>
+		<div class="col-md-2"><%= @home.bedrooms %></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Bathrooms:</div>
+		<div class="col-md-2"><%= @home.bathrooms %></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Zestimate:</div>
+		<div class="col-md-1"><%= number_to_currency(@home.zestimate, precision: 0) %></div>
+		<div class="col-md-4">(valuation range: <%= number_to_currency(@home.valuation_range_low, precision: 0) %> to <%= number_to_currency(@home.valuation_range_high, precision: 0) %>)</div>
+	</div>
+	<div class="row">
+		<div class="col-md-1">Last Sold:</div>
+		<div class="col-md-4"><%= number_to_currency(@home.last_sold_price, precision: 0) %> on <%= @home.last_sold_date %></div>
+	</div>
+<br>
+<hr>
+	<div class="row">
+		<div class="col-md-5"><i>Property information provided by Zillow</i></div>
+	</div>
+	<div class="row">
+		<div class="col-md-5"><a href="<%= @home.zillow_link %>">Additional Details</a></div>
+	</div>
+	<div class="row">
+		<div class="col-md-5"><a href="<%= @home.zillow_comps %>">Comparables</a></div>
+	</div>

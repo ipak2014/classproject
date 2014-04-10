@@ -4,7 +4,7 @@
 
 <% if @decline_reasons.any? == false %>
 	<p><strong>Congratulations!</strong> You are doing great financially.  If you would like to start your Saver Advantage application now or to save your profile for later, please create a user account.</p><br>
-	<a href='saveradvantage/newuser'>Create Account</a><br>
+	<a href="/saveradvantage/newuser/<%= @saver.id%>">Create Account</a><br>
 <% else %>
 	<p><strong>You are currently not eligble to apply for a Saver Advantage mortgage for the following reason(s):</strong></p>
 		<ul>

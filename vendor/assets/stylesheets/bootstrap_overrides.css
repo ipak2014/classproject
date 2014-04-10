@@ -20,8 +20,24 @@
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
+.intro-format {
+	line-height: 500px;
+	padding-top: 10%;
+	padding-bottom: 40%;
+	padding-left: 55%;
+	color: white;
+	text-align: center;
+	margin: 0;
+	background-image: url(http://i.imgur.com/nULMdPK.jpg?1);
+	background-position: center top;
+	background-size: 100%;
+	position: relative;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
 .input-custom {
 	height: 35px;
-	width: 128px;
+	width: 200px;
 	text-align: center;
 }

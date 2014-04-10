@@ -1,0 +1,40 @@
+<br>
+<form action="/saveradvantage/newapplication" method="post">
+<div class="container">
+<p><strong>Create a Saver Advantage Account</strong></p><br>
+	<div class="row">
+    	<div class="col-md-2">Your User Name:</div>
+    	<div class="col-md-2 text-center"><strong><%= @user.email %></strong></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2"><input type="hidden" class="input-custom" name="email" value='<%= @user.email %>'/></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">First Name:</div>
+        <div class="col-md-2"><input type="text" class="input-custom" name="first_name"/></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Last Name:</div>
+        <div class="col-md-2"><input type="text" class="input-custom" name="last_name"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-2">Create Password:</div>
+    	<div class="col-md-2"><input type="password" class="input-custom" name="password"/></div>
+    </div>    	
+	<div class="row">
+    	<div class="col-md-2">Confirm Password:</div>
+    	<div class="col-md-2"><input type="password" class="input-custom" name="password_confirmation"/></div>
+    </div>    	
+
+	
+    <br>
+    <div class="row">
+    	<div class="col-md-1"></div>
+    	<div class="col-md-3"><input type="submit" class="btn btn-primary btn-block" value="Create Account"/></div>
+    </div>
+</div>
+	
+</form>

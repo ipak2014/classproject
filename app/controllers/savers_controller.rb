@@ -11,13 +11,12 @@ class SaversController < ApplicationController
 
 	def create
 		saver = Saver.create(saver_params)
-		redirect_to '/saveradvantage/result'
+		redirect_to "/saveradvantage/result/#{saver.id}"
 	end
 
 	def result
 		#fix this to match the actual user
-		#@saver = Saver.find_by_email(params[:email])
-		@saver = Saver.all.sample
+		@saver = Saver.find_by_id(params[:id])
 		min = (@saver.income/12)*0.1
 		percent_down =@saver.downpayment.to_f/@saver.mortgage.to_f
 		
