@@ -20,6 +20,9 @@ class UserController < ApplicationController
 	def newapplication
 	end
 
+	def linkedin
+	end
+
 	private
 
 	def user_params

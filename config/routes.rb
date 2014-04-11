@@ -8,6 +8,7 @@ Saveradvantage::Application.routes.draw do
   get '/saveradvantage/newuser/:id' => 'user#newuser'
   post '/saveradvantage/newapplication' => 'user#create'
   get '/saveradvantage/newapplication' => 'user#newapplication'
+  get '/' => 'user#linkedin'
 
   
   get '/saveradvantage/login' => 'sessions#new'
