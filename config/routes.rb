@@ -1,22 +1,24 @@
 Saveradvantage::Application.routes.draw do
-  get '/saveradvantage' => 'savers#main'
-  get '/saveradvantage/saver' => 'savers#new'
-  post '/saveradvantage/result' => 'savers#create'
-  get '/saveradvantage/result/:id' => 'savers#result'
-  get '/saveradvantage/index' => 'savers#index'
+  get '/' => 'savers#main'
+  get '/saver' => 'savers#new'
+  post '/result' => 'savers#create'
+  get '/result/:id' => 'savers#result'
+  get '/index' => 'savers#index'
 
-  get '/saveradvantage/newuser/:id' => 'user#newuser'
-  post '/saveradvantage/newapplication' => 'user#create'
-  get '/saveradvantage/newapplication' => 'user#newapplication'
-  get '/' => 'user#linkedin'
+  get '/admin' => 'admin#portal'
 
-  
-  get '/saveradvantage/login' => 'sessions#new'
-  post '/saveradvantage/login' => 'sessions#create'
-  get '/saveradvantage/logout' => 'sessions#destroy'
+  get '/newuser/:id' => 'user#newuser'
+  post '/newapplication' => 'user#create'
+  get '/newapplication' => 'user#newapplication'
+    
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
-  get '/saveradvantage/property/new' => 'property#new'
-  post '/saveradvantage/property/display' => 'property#create'
-  get '/saveradvantage/property/display/:id' => 'property#display'
+  get '/property/new' => 'property#new'
+  post '/property/display' => 'property#create'
+  get '/property/display/:id' => 'property#display'
+  get '/property/payment/:id' => 'property#payment'
+  post '/property/payment/:id' => 'property#calculate'
 
 end

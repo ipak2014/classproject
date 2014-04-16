@@ -10,17 +10,17 @@ class SessionsController < ApplicationController
 			# save the user id inside the browser cookie. This is how we keep the user logged in when they navigate around our website.
 			flash[:info] = "Signed in successfully"
 			session[:user_id] = user.id
-			redirect_to '/saveradvantage/newapplication'
+			redirect_to '/newapplication'
 		else
 			flash[:info] = "Invalid credentials"
-			redirect_to '/saveradvantage/login'
+			redirect_to '/login'
 		end
 	end
 
 	def destroy
 		session[:user_id] = nil
 		flash[:info] = "Logged out"
-		redirect_to '/saveradvantage'
+		redirect_to '/'
 	end
 
 end

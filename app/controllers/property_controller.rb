@@ -32,11 +32,30 @@ class PropertyController < ApplicationController
 		property.zillow_comps = result.links[:comparables]
 		property.zillow_mapz = result.links[:mapthishome]
 		property.save
-		redirect_to "/saveradvantage/property/display/#{property.id}"
+		redirect_to "/property/display/#{property.id}"
 	end
 
 	def display
 		@home = Property.find_by_id(params[:id])
+	end
+
+	def payment
+		@home = Property.find_by_id(params[:id])
+		@price = params[:price].to_f
+		@ltv = params[:ltv].to_f/100
+		@rate = params[:rate].to_f/100
+		@term = params[:term].to_i
+		@mortgage = @price*@ltv
+		@closing_costs = @price*0.005
+		@downpayment = (@price*(1-@ltv)+@closing_costs)
+		@m_rate = @rate/12
+		@payment = (@m_rate*(1+@m_rate)**@term)/((1+@m_rate)**@term-1)*@mortgage
+		@m_property_tax = @price*0.0125/12
+		@m_insurance = @price*0.001/12
+		@total_payment = @payment + @m_property_tax + @m_insurance
+	end
+
+	def calculate
 	end
 
 private

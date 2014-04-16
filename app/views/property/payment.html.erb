@@ -1,0 +1,87 @@
+<form action="/property/payment/<%= @home.id %>">
+<div class="container">
+	<div class="row">
+		<div class="col-md-5 text-center"><strong>Calculate Monthly Payment</strong></div>
+	</div>
+	<br>
+	<div class="row">
+    	<div class="col-md-2">Bid Price:</div>
+		<div class="col-md-2 input-group">
+    		<span class="input-group-addon">$</span>
+    		<input type="integer" name="price" class="form-control"/>
+		</div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Loan-to-Value:</div>
+		<div class="col-md-1 input-group">
+    		<input type="integer" name="ltv" class="form-control"/>
+			<span class="input-group-addon">%</span>
+    	</div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Interest Rate:</div>
+		<div class="col-md-1 input-group">
+    		<input type="integer" name="rate" class="form-control"/>
+			<span class="input-group-addon">%</span>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="col-md-3">Term (in months):</div>
+		<div class="col-md-1 input-group">
+    		<input type="integer" name="term" class="form-control"/>
+    	</div>
+    </div>
+    <div class ="row">
+		<div class="col-md-2"></div>
+		<input type="submit" class="btn btn-primary" value="Calculate"/>
+	</div>
+</div>
+</form>
+
+<br>
+<% if @payment > 0 %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 text-center"><strong>Results</strong></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">Bid price:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@price, precision: 0) %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Mortgage:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@mortgage, precision: 0) %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Estimated closing costs:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@closing_costs, precision: 0) %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Downpayment:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@downpayment, precision: 0) %></div>
+    </div>
+    <br>
+    <div class="row"><strong>
+        <div class="col-md-5 text-center">Monthly payments at <%= number_to_percentage(@rate*100, precision: 3) %> interest rate and <%= @term/12 %>-year fixed term:</div>
+    </strong></div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">Mortgage:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@payment, precision: 0) %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Property tax:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@m_property_tax, precision: 0) %></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">Homeowners insurance:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@m_insurance, precision: 0) %></div>
+    </div>
+    <div class="row"><strong>
+        <div class="col-md-4">Total monthly payment:</div>
+        <div class="col-md-1 text-right"><%= number_to_currency(@total_payment, precision: 0) %></div>
+    </strong></div>
+</div>
+<% else %>
+<% end %>

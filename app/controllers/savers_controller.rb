@@ -1,5 +1,8 @@
 class SaversController < ApplicationController
 
+  before_filter :authorize_admin, :only => [:index]
+
+
 	def main
 	end
 
@@ -11,7 +14,7 @@ class SaversController < ApplicationController
 
 	def create
 		saver = Saver.create(saver_params)
-		redirect_to "/saveradvantage/result/#{saver.id}"
+		redirect_to "/result/#{saver.id}"
 	end
 
 	def result

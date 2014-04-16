@@ -41,7 +41,11 @@
 		<div class="col-md-4"><%= number_to_currency(@home.last_sold_price, precision: 0) %> on <%= @home.last_sold_date %></div>
 	</div>
 <br>
-
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-4"><a href="/property/payment/<%= @home.id%>" class="btn btn-primary">Calculate Monthly Payment</a></div>
+	</div>
+<br>
 <hr>
 	<div class="row">
 		<div class="col-md-5"><i>Property information provided by Zillow</i></div>

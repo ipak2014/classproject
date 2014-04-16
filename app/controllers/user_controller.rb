@@ -9,11 +9,11 @@ class UserController < ApplicationController
 
 		if user.save
 			flash[:info] = "Account successfully created!"
-			redirect_to '/saveradvantage/newapplication'
+			redirect_to '/newapplication'
 		else
 			saver = Saver.find_by_email(params[:email])
 			flash[:info] = "Signup failed."
-			redirect_to "/saveradvantage/result/#{saver.id}"
+			redirect_to "/result/#{saver.id}"
 		end
 	end
 	

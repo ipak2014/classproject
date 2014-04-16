@@ -4,7 +4,7 @@
 
 <% if @decline_reasons.any? == false %>
 	<p><strong>Congratulations!</strong> You are doing great financially.  If you would like to start your Saver Advantage application now or to save your profile for later, please create a user account.</p><br>
-	<a href="/saveradvantage/newuser/<%= @saver.id%>">Create Account</a><br>
+	<a href="/newuser/<%= @saver.id%>">Create Account</a><br>
 <% else %>
 	<p><strong>You are currently not eligble to apply for a Saver Advantage mortgage for the following reason(s):</strong></p>
 		<ul>
@@ -15,7 +15,7 @@
 			<% end %>
 			<br>
 			<% if Servicearea.find_by_zip(@saver.zip) == nil %>
-			<a href = "saveradvantage/notify">Notify me when Saver Advantage starts service in <%=@saver.zip %></a>
+			<a href = "/notify">Notify me when Saver Advantage starts service in <%=@saver.zip %></a>
 			<% end %>
 		</ul><br>
 	<p><strong>If you believe that you are eligible and would like Saver Advantage to re-consider your inquiry, please submit a brief explanation</strong></p>
@@ -24,8 +24,8 @@
 		<li>I carry a balance on a 0% credit card and have sufficient cash to pay it off immediately.</li>
 		<li>I prefer to save outside of retirement accounts and save more than 20% of monthly income.</li>
 	</ul>
-	<a href=/'saveradvantage/result/loe'>Submit explanation</a><br>
+	<a href=/'/result/loe'>Submit explanation</a><br>
 <% end %>
 
 <br>
-<a href='/saveradvantage'>Return to Homepage</a>
+<a href='/'>Return to Homepage</a>

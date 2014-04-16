@@ -29,17 +29,17 @@
     <div class="row">
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/saveradvantage">Home</a></li>
-            <li><a href="/saveradvantage/saver">Saver Test</a></li>
-            <li><a href="/saveradvantage/property/new">Property Portal</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/saver">Saver Test</a></li>
+            <li><a href="/property/new">Property Portal</a></li>
+            <li><a href="/admin">Admin</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
             <li><a href="#">Signed in as <%= current_user.first_name %></a></li>
-            <li class="active"><a href="/saveradvantage/logout" role="button">Logout</a></li>
+            <li class="active"><a href="/logout" role="button">Logout</a></li>
           <% else %>
-            <li class="active"><a href="/saveradvantage/login" type="button">Sign in</a></li>
+            <li class="active"><a href="/login" type="button">Sign in</a></li>
           <% end %>
         </ul>
       </div>

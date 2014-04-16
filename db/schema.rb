@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140409020124) do
+ActiveRecord::Schema.define(version: 20140415002851) do
 
   create_table "properties", force: true do |t|
     t.string   "saver_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140409020124) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",           default: false
   end
 
 end

@@ -5,10 +5,7 @@
 	line-height: 26px;
 }
 .section {
-	height: 0;
-	padding-top: 10%;
-	padding-bottom: 40%;
-	padding-left: 55%;
+	height: 400px;
 	color: white;
 	text-align: center;
 	margin: 0;
@@ -20,6 +17,12 @@
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
+}
+.special_heading {
+
+
+}
+
 .intro-format {
 	line-height: 500px;
 	padding-top: 10%;

@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
 helper_method :current_user
 
 	def authorize
-		redirect_to '/saveradvantage' unless current_user
+		redirect_to '/' unless current_user
+	end
+
+	def authorize_admin
+		redirect_to '/' and flash[:info] = "Admin access only" unless current_user && current_user.admin == true
 	end
 
 end
