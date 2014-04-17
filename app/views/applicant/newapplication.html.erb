@@ -3,7 +3,8 @@
  		<div class="col-md-7 text-center"><strong>Welcome to your Saver Advantage Mortgage Application!</strong></div>
  	</div>
  	<br>
-<form action="/newapplication" method="post">
+
+<form action="/newapplication/declarations" method="post">
  	<div class="row">
  		<div class="col-md-3">Borrower Name:</div>
  		<div class="col-md-3"><%= current_user.first_name %> <%= current_user.last_name %></div>
@@ -63,29 +64,12 @@
 			<option>Rent</option>
 		</select></div>
     </div>
-
-
-<br>
-<br>
- 	<div class="row">
- 		<div class="col-md-7 text-center"><strong>Declarations</strong></div>
- 	</div>
- 	<div class="row">
- 		<div class="col-md-5"></div>
- 		<div class="col-md-1">Yes</div>
- 		<div class="col-md-1">No</div>
- 	</div>
- 	<div class="row">
- 		<div class="col-md-5">a. Are there any outstanding judgments against you?</div>
- 		<div class="col-md-1">
- 			<div class="radio"><label>
-    			<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked></label></div>
-    	</div>
-	<div class="col-md-1">
- 			<div class="radio"><label>
-    			<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked></label></div>
-    	</div>
-	</div>
-	<input type="submit" class="btn btn-primary" value="Save"/>
+  <br>
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-2"><input type="submit" class="btn btn-primary btn-block" value="Next"/></div>
+  </div>
 </form>
-</div>
+
+
+

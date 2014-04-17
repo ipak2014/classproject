@@ -1,0 +1,30 @@
+<form action="/newapplication/documents" method="post">
+<div class="container">
+	<div class="row">
+ 		<div class="col-md-10 text-center"><strong>Declarations</strong></div>
+ 	</div>
+ 	<div class="row">
+ 		<div class="col-md-8"></div>
+ 		<div class="col-md-1">Yes</div>
+ 		<div class="col-md-1">No</div>
+ 	</div>
+<% @declarations.each do |attribute, question| %>
+ 	<div class="row">
+ 		<div class="col-md-8"><%= question %></div>
+ 		<div class="col-md-1">
+ 			<div class="radio"><label>
+    			<input type="radio" name=<%= attribute %> id="optionsRadios1" value="option1" checked></label></div>
+    	</div>
+		<div class="col-md-1">
+ 			<div class="radio"><label>
+    			<input type="radio" name=<%= attribute %> id="optionsRadios2" value="option2"></label></div>
+    	</div>
+	</div>
+	<br>
+<% end %>
+  <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-2"><input type="submit" class="btn btn-primary btn-block" value="Next"/></div>
+  </div>
+</div>
+</form>

@@ -3,13 +3,19 @@ Saveradvantage::Application.routes.draw do
   get '/saver' => 'savers#new'
   post '/result' => 'savers#create'
   get '/result/:id' => 'savers#result'
-  get '/index' => 'savers#index'
+  get '/saver/index' => 'savers#index'
 
   get '/admin' => 'admin#portal'
 
   get '/newuser/:id' => 'user#newuser'
   post '/newapplication' => 'user#create'
-  get '/newapplication' => 'user#newapplication'
+  get '/user/index' => 'user#index'
+  
+  get '/newapplication' => 'applicant#newapplication'
+  post '/newapplication/declarations' => 'applicant#newapplication'
+  get '/newapplication/declarations' => 'applicant#declarations'
+  post '/newapplication/documents' => 'applicant#declarations'
+  get '/newapplication/documents' => 'applicant#documents'
     
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

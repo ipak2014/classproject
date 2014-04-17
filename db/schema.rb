@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415002851) do
+ActiveRecord::Schema.define(version: 20140417225726) do
 
   create_table "properties", force: true do |t|
     t.string   "saver_id"
@@ -85,7 +85,33 @@ ActiveRecord::Schema.define(version: 20140415002851) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",                default: false
+    t.string   "ssn"
+    t.string   "dob"
+    t.string   "phone"
+    t.string   "marital_status"
+    t.string   "degree"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.float    "res_years"
+    t.string   "ownrent"
+    t.string   "w2"
+    t.string   "current1040"
+    t.string   "prior1040"
+    t.string   "judgment"
+    t.string   "bankruptcy"
+    t.string   "foreclosure"
+    t.string   "lawsuit"
+    t.string   "obligation"
+    t.string   "delinquency"
+    t.string   "alimony"
+    t.string   "downpayment_borrowed"
+    t.string   "endorsement"
+    t.string   "citizen"
+    t.string   "resident"
+    t.string   "residency"
   end
 
 end

@@ -45,6 +45,8 @@ gem 'bcrypt-ruby', '~> 3.1.0'
 
 gem 'rubillow'
 
+gem 'carrierwave'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -1,0 +1,36 @@
+<h2 class="text-center"><strong>List of all current users</strong></h2>
+<br>
+<br>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+		<th>ID</th>
+		<th class="col-md-2">Name</th>
+		<th class="col-md-2 text-center">SSN</th>
+		<th class="text-center">Date of Birth</th>
+		<th class="text-center">Marital Status</th>
+		<th class="text-center">Education</th>
+		<th class="col-md-2 text-center">Current Address</th>
+		<th class="text-center">Years at Address</th>
+		<th class="text-center">Own/ Rent?</th>
+		<th class="col-md-2 text-center">Phone #</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @user.each do |user| %>
+		<tr>
+		<td><%= user.id %></td>
+		<td><%= user.first_name%> <%= user.last_name%></td>
+		<td class="text-center"><%= user.ssn %></td>
+		<td class="text-center"><%= user.dob %></td>
+		<td class="text-center"><%= user.marital_status %></td>
+		<td class="text-center"><%= user.degree %></td>
+		<td class="text-left"><%= user.street %>, <%= user.city %>, <%= user.state %> <%= user.zipcode %></td>
+		<td class="text-center"><%= number_with_delimiter(user.res_years, delimiter: ",", separator: ".") %></td>
+		<td class="text-center"><%= user.ownrent %></td>
+		<td class="text-center"><%= user.phone %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

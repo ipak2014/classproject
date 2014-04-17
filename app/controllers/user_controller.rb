@@ -13,14 +13,13 @@ class UserController < ApplicationController
 		else
 			saver = Saver.find_by_email(params[:email])
 			flash[:info] = "Signup failed."
-			redirect_to "/result/#{saver.id}"
+			redirect_to "/"
+			#"/result/#{saver.id}"
 		end
 	end
 	
-	def newapplication
-	end
-
-	def linkedin
+	def index
+		@user = User.all
 	end
 
 	private

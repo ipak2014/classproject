@@ -19,7 +19,6 @@
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
   api_key: 77j4sh8x3d7s0g
 </script>
-
   </head>
 </head>
 <body>
@@ -31,8 +30,11 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/saver">Saver Test</a></li>
-            <li><a href="/property/new">Property Portal</a></li>
+            <li><a href="/property/new">Property Search</a></li>
             <li><a href="/admin">Admin</a></li>
+            <% if current_user %>
+            <li><a href="/newapplication">Application</a></li>
+            <% end %>
           </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
@@ -51,7 +53,13 @@
 
 
 <div class="container">
-<div><%= flash[:info] %></div>
+<% if flash[:info] == nil %>
+<% else %>
+<div class="alert alert-info alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong><%= flash[:info] %></strong></div>
+<% end %>
+
 <%= yield %>
 
 </div>
