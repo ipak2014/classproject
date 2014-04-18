@@ -4,6 +4,9 @@ def newapplication
 		@status = ["Married", "Single", "Divorced", "Widowed", "Separated"]
 		@degree = ["High School", "College", "Master", "Doctorate"]
 		applicant = User.find_by_id(current_user.id)
+		if params[:ssn] == nil || params[:dob] == nil || params[:phone] == nil || params[:street] == nil || params[:state] == nil || params[:city] == nil || params[:zipcode] == nil
+			flash[:info] = "Please enter your information"
+		else
 		applicant.ssn = params[:ssn]
 		applicant.dob = params[:dob]
 		applicant.phone = params[:phone]
@@ -22,6 +25,7 @@ def newapplication
 		else
 			flash[:info] = "Failed"
 		end
+	end
 	end
 
 	def documents
@@ -45,7 +49,7 @@ def newapplication
 		@declarations["resident"] = "k.  Are you a permanent resident alien?"
 		@declarations["residence"] = "l.  Do you intend to occupy the property as your primary residence?"
 		applicant.save
-		redirect_to '/newapplication/documents'
+		#redirect_to '/newapplication/documents'
 	end
 
 	def linkedin

@@ -8,7 +8,7 @@ Saveradvantage::Application.routes.draw do
   get '/admin' => 'admin#portal'
 
   get '/newuser/:id' => 'user#newuser'
-  post '/newapplication' => 'user#create'
+  post '/' => 'user#create'
   get '/user/index' => 'user#index'
   
   get '/newapplication' => 'applicant#newapplication'
