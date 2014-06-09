@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417225726) do
+ActiveRecord::Schema.define(version: 20140529024428) do
 
   create_table "properties", force: true do |t|
     t.string   "saver_id"
@@ -112,6 +112,17 @@ ActiveRecord::Schema.define(version: 20140417225726) do
     t.string   "citizen"
     t.string   "resident"
     t.string   "residency"
+    t.string   "linkedin_token"
+    t.string   "linkedin_secret"
+    t.string   "company1"
+    t.string   "position1"
+    t.string   "length1"
+    t.string   "company2"
+    t.string   "position2"
+    t.string   "length2"
+    t.string   "company3"
+    t.string   "position3"
+    t.string   "length3"
   end
 
 end

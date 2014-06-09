@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12"><strong><%= current_user.first_name %>,</strong></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-12">Saver Advantage will now prepare your financial profile by downloading information directly from your financial institutions.  This information goes beyond your credit report and will demonstrate what you do right financially.  Here is a list of accounts that we need to access and explanation of information that we need to obtain.</div>
+	</div>
+	<br>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+			<th class="col-md-3">Account Type</th>
+			<th class="col-md-9">Information</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% accounts_hash.each do |account, info| %>
+			<tr>
+			<td class="col-md-3"><%= account %></td>
+			<td class="col-md-9"><%= info %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+	<br>
+	<div class="row">
+		<div class="col-md-12"><strong>Please enter your user name and password for each account</strong></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3">Select Your Financial Institution</div>
+		    <div class="col-md-4"><select class="form-control input-custom" type="string" name="" class="input-custom">
+				<option>Select</option>
+				<% @financial_institutions.each do |bank| %>
+				<option><%= bank %></option>
+				<% end %>
+		  	</select></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3">Login ID</div>
+		<div class="col-md-3"><input type="string" name="" class="input-custom"/></div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3">Password</div>
+		<div class="col-md-3"><input type="string" name="" class="input-custom"/></div>
+	</div>
+	<br>
+	<div class="row">
+  		<div class="col-md-3"></div>
+      	<div class="col-md-2"><input type="submit" class="btn btn-primary btn-block" value="Submit"/></div>
+  	</div>
+</div>

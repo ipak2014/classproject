@@ -13,15 +13,6 @@
     	</div>
     </div>    	
 	<div class="row">
-    	<div class="col-md-8">Do you pay off your credit card balances in full every month?</div>
-    	<div class="col-md-4.5"><select class="form-control input-custom" type="string" name="cc" placeholder="Select One" class="input-custom">
-  			<option>Select One</option>
-  			<% @cc.each do |cc| %>
-  			<option><%= cc %></option>
-  			<% end %>
-  	  	</select></div>
-    </div>    	
-	<div class="row">
     	<div class="col-md-8">How much do you contribute to your retirement accounts every month?</div>
     	<div class="col-md-2 input-group">
     		<span class="input-group-addon">$</span>
@@ -38,6 +29,15 @@
     	</div>
     </div>    	
 	<div class="row">
+        <div class="col-md-8">Do you pay off your credit card balances in full every month?</div>
+        <div class="col-md-4.5"><select class="form-control input-custom" type="string" name="cc" placeholder="Select One" class="input-custom">
+            <option>Select One</option>
+            <% @cc.each do |cc| %>
+            <option><%= cc %></option>
+            <% end %>
+        </select></div>
+    </div>      
+    <div class="row">
     	<div class="col-md-8">Maximum mortgage amount you would like to get:</div>
     	 <div class="col-md-2 input-group">
     		<span class="input-group-addon">$</span>

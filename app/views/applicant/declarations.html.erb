@@ -1,4 +1,4 @@
-<form action="/newapplication/documents" method="post">
+<form action="/newapplication/declarations" method="post">
 <div class="container">
 	<div class="row">
  		<div class="col-md-10 text-center"><strong>Declarations</strong></div>
@@ -8,16 +8,16 @@
  		<div class="col-md-1">Yes</div>
  		<div class="col-md-1">No</div>
  	</div>
-<% @declarations.each do |attribute, question| %>
+<% declarations_hash.each do |attribute, question| %>
  	<div class="row">
  		<div class="col-md-8"><%= question %></div>
  		<div class="col-md-1">
  			<div class="radio"><label>
-    			<input type="radio" name=<%= attribute %> id="optionsRadios1" value="option1" checked></label></div>
+    			<input type="radio" name=<%= attribute %> id="optionsRadios1" value="Yes" checked></label></div>
     	</div>
 		<div class="col-md-1">
  			<div class="radio"><label>
-    			<input type="radio" name=<%= attribute %> id="optionsRadios2" value="option2"></label></div>
+    			<input type="radio" name=<%= attribute %> id="optionsRadios2" value="No"></label></div>
     	</div>
 	</div>
 	<br>
@@ -28,8 +28,4 @@
   </div>
 </div>
 </form>
-  <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-2 text-center"><a href="/newapplication/documents">Next</a></div>
-  </div>
 </div>

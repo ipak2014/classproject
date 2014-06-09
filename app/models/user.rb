@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true
 
 	mount_uploader :w2, DocumentUploader
+	mount_uploader :current1040, DocumentUploader
+	mount_uploader :prior1040, DocumentUploader
 end

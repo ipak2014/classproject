@@ -1,0 +1,75 @@
+<div class="container">
+ 	<div class="row">
+ 		<div class="col-md-7 text-center"><strong>General Info</strong></div>
+ 	</div>
+ 	<br>
+
+<form action="/newapplication/general_info" method="post">
+ 	<div class="row">
+ 		<div class="col-md-3">Borrower Name:</div>
+ 		<div class="col-md-3"><%= current_user.first_name %> <%= current_user.last_name %></div>
+ 	</div>
+ 	<br>
+	<div class="row">
+    	<div class="col-md-3">Social Security Number:</div>
+    	<div class="col-md-3"><input type="integer" placeholder="xxx-xx-xxx" name="ssn" class="input-custom"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Date of birth:</div>
+    	<div class="col-md-3"><input type="string" name="dob" placeholder="mm/dd/yyy" class="input-custom"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Primary phone:</div>
+    	<div class="col-md-3"><input type="integer" name="phone" placeholder="xxx-xxx-xxxx" class="input-custom"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Marital status:</div>
+    	<div class="col-md-3"><select class="form-control input-custom" type="string" name="marital_status" placeholder="Select One" class="input-custom">
+  			<option>Select One</option>
+  			<% @status.each do |status| %>
+  			<option><%= status %></option>
+  			<% end %>
+  	  	</select></div>
+    </div>    	
+	<div class="row">
+    	<div class="col-md-3">Highest Education Degree:</div>
+    	<div class="col-md-3"><select class="form-control input-custom" type="string" name="degree" placeholder="Select One" class="input-custom">
+  			<option>Select One</option>
+  			<% @degree.each do |degree| %>
+  			<option><%= degree %></option>
+  			<% end %>
+  	  	</select></div>
+    </div>    	
+	<div class="row">
+    	<div class="col-md-3">Present Address:</div>
+    	<div class="col-md-3"><input type="string" name="street" placeholder="Street" class="input-custom"/></div>
+    	<div class="col-md-2"><input type="string" name="city" placeholder="City" class="input-custom"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3"></div>
+    	    <div class="col-md-3"><select class="form-control input-custom" type="string" name="state" placeholder="Select" class="input-custom">
+  			<option>Select State</option>
+  			<% state_array.each do |state| %>
+  			<option><%= state %></option>
+  			<% end %>
+  	  	</select></div>
+    	<div class="col-md-2"><input type="string" name="zipcode" placeholder="Zip Code" class="input-custom"/></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Years at current address:</div>
+    	<div class="col-md-3"><input type="float" name="res_years" placeholder="x.x" class="input-custom"/></div>
+	    <div class="col-md-3"><select class="form-control input-custom" type="string" name="ownrent" placeholder="Select" class="input-custom">
+			<option>Own or Rent?</option>
+			<option>Own</option>
+			<option>Rent</option>
+		</select></div>
+    </div>
+  <br>
+  <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-2"><input type="submit" class="btn btn-primary btn-block" value="Save"/></div>
+  </div>
+</form>
+<br>
+
+

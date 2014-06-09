@@ -16,9 +16,6 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-  api_key: 77j4sh8x3d7s0g
-</script>
   </head>
 </head>
 <body>
@@ -30,11 +27,11 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/saver">Saver Test</a></li>
-            <li><a href="/property/new">Property Search</a></li>
-            <li><a href="/admin">Admin</a></li>
             <% if current_user %>
             <li><a href="/newapplication">Application</a></li>
             <% end %>
+            <li><a href="/property/new">Property Search</a></li>
+            <li><a href="/admin">Admin</a></li>
           </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>

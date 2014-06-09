@@ -1,0 +1,97 @@
+<div class="container">
+ 	<div class="row">
+ 		<div class="col-md-7 text-center"><strong>Application Summary</strong></div>
+ 	</div>
+ 	<br>
+ 	<br>
+	
+	<div class="row">
+ 		<div class="col-md-7"><strong>General Info</strong></div>
+ 	</div>
+ 	<div class="row">
+ 		<div class="col-md-3">Borrower Name:</div>
+ 		<div class="col-md-3"><%= @applicant.first_name %> <%= @applicant.last_name %></div>
+ 	</div>
+	<div class="row">
+    	<div class="col-md-3">Social Security Number:</div>
+    	<div class="col-md-3"><%= @applicant.ssn %></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Date of birth:</div>
+    	<div class="col-md-3"><%= @applicant.dob %></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Primary phone:</div>
+    	<div class="col-md-3"><%= @applicant.phone %></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Marital status:</div>
+    	<div class="col-md-3"><%= @applicant.marital_status %></div>
+    </div>    	
+	<div class="row">
+    	<div class="col-md-3">Highest Education Degree:</div>
+    	<div class="col-md-3"><%= @applicant.degree %></div>
+    </div>    	
+	<div class="row">
+    	<div class="col-md-3">Present Address:</div>
+    	<div class="col-md-4"><%= @applicant.street %>, <%= @applicant.city %>, <%= @applicant.state %> <%= @applicant.zipcode %></div>
+    </div>
+	<div class="row">
+    	<div class="col-md-3">Years at current address:</div>
+    	<div class="col-md-4"><%= @applicant.res_years %> / <%= @applicant.ownrent %></div>
+    </div>
+	<br>
+    <div class="row">
+        <div class="col-md-7"><strong>Employment Info</strong></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">Current Employment:</div>
+        <div class="col-md-4"><%= @applicant.position1 %>, <%= @applicant.company1 %>, <%= @applicant.length1 %> year(s)</div>
+    </div>
+    <% if @applicant.position2 == "" %>
+    <% else %>      
+        <div class="row">
+            <div class="col-md-3">Prior Employment:</div>
+            <div class="col-md-4"><%= @applicant.position2 %>, <%= @applicant.company2 %>, <%= @applicant.length2 %> year(s)</div>
+        </div>      
+    <% end %>
+        <% if @applicant.position3 == "" %>
+        <% else %>      
+        <div class="row">
+            <div class="col-md-3">Prior Employment:</div>
+            <div class="col-md-4"><%= @applicant.position3 %>, <%= @applicant.company3 %>, <%= @applicant.length3 %> year(s)</div>
+        </div>      
+    <% end %>
+    <br>
+	<div class="row">
+ 		<div class="col-md-7"><strong>Declarations</strong></div>
+ 	</div>
+	
+	<% declarations_hash.each do |attribute, question| %>
+ 	<div class="row">
+ 		<div class="col-md-6"><%= question %></div>
+ 		<div class="col-md-1"><%= @applicant[attribute] %></div>
+	</div>
+	<% end %>
+    <br>
+    <div class="row">
+        <div class="col-md-7"><strong>Financial Profile</strong></div>
+    </div>	
+    <div class='row'>
+        <div class="col-md-7"><a href="#"><%= current_user.first_name %>'s Financials</a></div>
+    </div>
+    <br>
+	<div class="row">
+ 		<div class="col-md-7"><strong>Uploaded Documents</strong></div>
+ 	</div>
+	<div class='row'>
+        <div class="col-md-7"><a href="<%= @applicant.w2.url %>">W2<a/></div>
+    </div>
+    <div class='row'>
+        <div class="col-md-7"><a href="<%= @applicant.current1040.url %>">2013 Tax Return<a/></div>
+    </div>
+        <div class='row'>
+        <div class="col-md-7"><a href="<%= @applicant.prior1040.url %>">2012 Tax Return<a/></div>
+    </div>
+</div>
+

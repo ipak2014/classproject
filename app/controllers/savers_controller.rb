@@ -18,7 +18,6 @@ class SaversController < ApplicationController
 	end
 
 	def result
-		#fix this to match the actual user
 		@saver = Saver.find_by_id(params[:id])
 		min = (@saver.income/12)*0.1
 		percent_down =@saver.downpayment.to_f/@saver.mortgage.to_f
@@ -39,9 +38,10 @@ class SaversController < ApplicationController
 			if @saver.mortgage < 625500
 				@decline_reasons << "We are sorry. Saver Advantage currently only originates  mortgages over $625,500."
 			end
-			if Servicearea.find_by_zip(@saver.zip) == nil
-				@decline_reasons << "We are sorry.  Saver Advantage currently does not serve your location.  Please let us know if we can contact you when we expand to your area."
-			end
+			#add back later
+			#if Servicearea.find_by_zip(@saver.zip) == nil
+				#@decline_reasons << "We are sorry.  Saver Advantage currently does not serve your location.  Please let us know if we can contact you when we expand to your area."
+			#end
 	
 	end
 
